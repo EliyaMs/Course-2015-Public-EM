@@ -17,21 +17,18 @@ Calculator.prototype.mult = function () {
 }
 
 Calculator.prototype.log = function () {
-    console.log(this.add());
-    console.log(this.sub());
-    console.log(this.mult());
+    console.log(this.a + ' + ' + this.b + ' = ' + this.add());
+    console.log(this.a + ' - ' + this.b + ' = ' + this.sub());
+    console.log(this.a + ' * ' + this.b + ' = ' + this.mult());
 }
 
 var c1 = new Calculator(5, 10);
-var callLog = c1.log;
-callLog.call(c1);
+c1.log();
 
 var c2 = new Calculator(6, 10);
-var callLog2 = c2.log;
-callLog2.call(c2);
-
+c2.log();
 
 
 setTimeout(() => {
-    callLog2.call(c1);
+    c1.log();
 }, 2000);
