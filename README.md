@@ -1,4 +1,4 @@
 # Course-2015-Public-EM
-JB
+JB - Angular
 
 Hello World
