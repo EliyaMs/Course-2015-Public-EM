@@ -20,7 +20,7 @@ Calculator.prototype.log = function () { // print all the functions
     console.log(
         this.a + ' + ' + this.b + ' = ' + this.add() + '\n' + 
         this.a + ' - ' + this.b + ' = ' + this.sub() + '\n' + 
-        this.a + ' * ' + this.b + ' = ' + this.mult()
+        this.a + ' * ' + this.b + ' = ' + this.mult()+ '\n'
     );
 }
 
