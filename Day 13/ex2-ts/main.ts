@@ -2,7 +2,7 @@ import { Exam } from "./exam";
 
 let exam = new Exam();
 exam.addQuestion({
-    caption: 'what do you get if you mix red and yellow', 
+    caption: 'what do you get if you mix red and yellow?', 
     answers: [
         'Pink', 
         'Orange', 
@@ -13,7 +13,7 @@ exam.addQuestion({
 });
 
 exam.addQuestion({
-    caption: 'what do you get if you mix blue and yellow', 
+    caption: 'what do you get if you mix blue and yellow?', 
     answers: [
         'Pink', 
         'Orange', 
@@ -24,7 +24,7 @@ exam.addQuestion({
 });
 
 exam.addQuestion({
-    caption: 'what do you get if you mix blue and red', 
+    caption: 'what do you get if you mix blue and red?', 
     answers: [
         'Purple', 
         'Cyan', 
@@ -35,7 +35,7 @@ exam.addQuestion({
 });
 
 exam.addQuestion({
-    caption: 'what do you get if you mix green and magenta', 
+    caption: 'what do you get if you mix green and magenta?', 
     answers: [
         'Ichs', 
         'Brown', 
