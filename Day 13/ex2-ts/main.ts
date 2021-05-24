@@ -2,7 +2,7 @@ import { Exam } from "./exam";
 
 let exam = new Exam();
 exam.addQuestion({
-    caption: 'what do you get if you mix red and yellow?', 
+    caption: 'what do you get if you mix red and yellow??', 
     answers: [
         'Pink', 
         'Orange', 
