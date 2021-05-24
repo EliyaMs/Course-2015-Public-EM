@@ -14,6 +14,7 @@ export class Exam {
             for (const answer of question.answers) {
                 console.log(answer);
             }
+            console.log("");
         }
     }
 

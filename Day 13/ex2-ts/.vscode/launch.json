@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\ex2-js\\main.ts",
+            "program": "${workspaceFolder}\\main.ts",
             "outFiles": ["${workspaceFolder}/bin/**/*.js"]
         }
     ]
