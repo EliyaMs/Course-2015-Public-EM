@@ -1,0 +1,29 @@
+<div class="summary" >
+    <h2>Summary</h2>
+
+    <div>
+        <div *ngIf="!completeQuestions.length" class="waiting">
+            <p class="loading">Waiting for your answer</p>
+            <div class="col-3">
+                <div class="snippet" data-title=".dot-pulse">
+                  <div class="stage">
+                    <div class="dot-pulse"></div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <ul>
+            <li *ngFor="let question of completeQuestions">
+                <div class="qA">
+                    <p class="caption">{{question.caption}}</p>
+                    <p 
+                        class="redBorder" 
+                        [class.greenBorder]="question.userAnswer === question.correctAnswer"
+                    >{{question.answers[question.userAnswer]}}
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
