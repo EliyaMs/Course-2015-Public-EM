@@ -8,14 +8,20 @@ import { Question } from 'src/app/models/question';
 })
 export class QuestionPresenterComponent {
 
+  // color: string = "cyan";
+
   @Input()
-  question!:Question;
+  question!: Question;
 
   @Output()
   selectedAnswer = new EventEmitter<number>();
 
-  selectAnswer(answerIndex: number){
-    this.selectedAnswer.emit(answerIndex);
+  selectAnswer(answerIndex: number) {
+    if (this.question.userAnswer !== answerIndex ) {
+      this.question.userAnswer = answerIndex
+      setTimeout(() => {
+        this.selectedAnswer.emit(answerIndex);
+      }, 500);
+    }
   }
-
 }

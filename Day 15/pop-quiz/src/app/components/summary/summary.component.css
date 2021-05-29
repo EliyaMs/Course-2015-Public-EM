@@ -55,13 +55,20 @@ h2 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .loading {   
-    padding: 3px;
-    color: #478998a6;
+  padding: 3px;
+  color: #478998a6;
 }
 
+
+
+.untulNow {
+  margin-top: 5px;
+  color: #478998a6;
+}
 
 /**
  * ==============================================
@@ -74,33 +81,24 @@ h2 {
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    box-shadow: 9999px 0 0 -5px #9880ff;
     animation: dotPulse 1.5s infinite linear;
     animation-delay: .25s;
   }
   
   .dot-pulse::before, .dot-pulse::after {
     content: '';
-    display: inline-block;
     position: absolute;
-    top: 0;
     width: 10px;
     height: 10px;
     border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
   }
   
   .dot-pulse::before {
-    box-shadow: 9984px 0 0 -5px #9880ff;
     animation: dotPulseBefore 1.5s infinite linear;
     animation-delay: 0s;
   }
   
   .dot-pulse::after {
-    box-shadow: 10014px 0 0 -5px #9880ff;
     animation: dotPulseAfter 1.5s infinite linear;
     animation-delay: .5s;
   }

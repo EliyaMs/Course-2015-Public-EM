@@ -5,6 +5,11 @@
         <ul>
             <li class="liAnswer"
                 *ngFor="let answer of question.answers; let answerIndex = index"
+                [class.green]="answerIndex === question.correctAnswer &&
+                                question.userAnswer !== -1"
+                [class.red]="answerIndex !== question.correctAnswer  &&
+                                question.userAnswer !== -1"
+                [class.cyan]="question.userAnswer === -1"
                 (click)="selectAnswer(answerIndex)" 
             > 
             {{answer}} 

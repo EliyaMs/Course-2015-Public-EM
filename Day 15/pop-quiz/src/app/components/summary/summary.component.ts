@@ -9,4 +9,7 @@ import { Question } from 'src/app/models/question';
 export class SummaryComponent { 
   @Input()
   completeQuestions!:Question[];
+  
+  @Input()
+  correctAnswers:number = 0;
 }

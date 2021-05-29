@@ -2,16 +2,14 @@
     <h2>Summary</h2>
 
     <div>
+        <div *ngIf="completeQuestions.length" class="untulNow waiting">
+            <p> correct answers: {{correctAnswers}} / {{completeQuestions.length}}</p>
+        </div>
         <div *ngIf="!completeQuestions.length" class="waiting">
             <p class="loading">Waiting for your answer</p>
-            <div class="col-3">
-                <div class="snippet" data-title=".dot-pulse">
-                  <div class="stage">
-                    <div class="dot-pulse"></div>
-                  </div>
-                </div>
-              </div>
+            <div class="dot-pulse"></div>
         </div>
+
         <ul>
             <li *ngFor="let question of completeQuestions">
                 <div class="qA">
@@ -24,6 +22,7 @@
                 </div>
             </li>
         </ul>
+
     </div>
 
 </div>

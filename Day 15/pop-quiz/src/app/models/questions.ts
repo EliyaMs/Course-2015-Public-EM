@@ -9,7 +9,7 @@ export const Questions: Question[] = [
         userAnswer: -1
     }, {
         caption: 'what do you get if you mix blue and yellow?',
-        answers: ['Pink', 'Orange', 'Green', 'White'],
+        answers: ['Green', 'Pink', 'Orange', 'White'],
         correctAnswer: 3,
         userAnswer: -1
     }, {
