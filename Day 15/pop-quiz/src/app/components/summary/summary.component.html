@@ -14,11 +14,18 @@
             <li *ngFor="let question of completeQuestions">
                 <div class="qA">
                     <p class="caption">{{question.caption}}</p>
-                    <p 
-                        class="redBorder" 
-                        [class.greenBorder]="question.userAnswer === question.correctAnswer"
-                    >{{question.answers[question.userAnswer]}}
-                    </p>
+                    <div class="wrongTrue">
+                        <p 
+                            class="redBorder" 
+                            [class.greenBorder]="question.userAnswer === question.correctAnswer"
+                        >{{question.answers[question.userAnswer]}}
+                        </p>
+                        <!-- <p
+                        *ngIf="question.userAnswer !== question.correctAnswer"
+                        class="greenBorder">
+                            {{question.answers[question.correctAnswer] }}
+                        </p> -->
+                    </div>
                 </div>
             </li>
         </ul>
