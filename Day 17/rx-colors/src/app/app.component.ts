@@ -15,12 +15,9 @@ export class AppComponent implements OnInit {
   constructor(public GS: GameService){}
 
   ngOnInit(): void {
-    let r$ = this.GS.getRed();
-    let g$ = this.GS.getGreen();
-    let b$ = this.GS.getBlue();
-
     let combinedRgb$ = combineLatest(
-      [r$, g$, b$]).pipe(
+      [this.GS.getRed(), this.GS.getGreen(), this.GS.getBlue()])
+      .pipe(
         map(rgb => {
           return`rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`
         }

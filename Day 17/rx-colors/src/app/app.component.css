@@ -1,5 +1,6 @@
 :host {
     display: grid;
+    grid-template-rows: 1fr auto;
     grid-template-columns: repeat(4, 1fr);
     margin: 30px;
 }
@@ -8,6 +9,9 @@ button {
     height: fit-content;
     width: fit-content;
     font-size: 20px;
+    background-color: rgb(104, 104, 199);
+    color: rgb(243, 8, 192);
+    border-radius: 10px;
 }
 
 .myButton {
@@ -16,3 +20,19 @@ button {
     align-items: center;
     justify-content: center;
 }
+
+.success {
+    grid-column: 2 / 4;
+    color: green;
+    font-size: 50px;
+    text-align: center;
+    margin: 30px;
+    animation: color-change 2s infinite;
+}
+
+@keyframes color-change {
+    0% { color: green; }
+    50% { color: rgb(55, 221, 40); }
+    100% { color:  rgb(30, 156, 30)}
+}
+
