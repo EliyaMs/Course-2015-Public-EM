@@ -8,7 +8,13 @@ import { Question } from 'src/app/models/question';
 })
 export class QuestionPresenterComponent {
 
-  // color: string = "cyan";
+  // @Input()
+  // question: Question = {
+  //   caption: "",
+  //   answers: [],
+  //   correctAnswer: 0,
+  //   userAnswer: 0
+  // };
 
   @Input()
   question!: Question;

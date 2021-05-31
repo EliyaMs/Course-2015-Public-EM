@@ -1,0 +1,21 @@
+<p>RGB(red, green, blue)</p>
+<div class="row">
+    <label>R:</label>
+    <input #red type="number" min="0" max="255" placeholder="Red"
+    pattern="{{onlyColorRegEx}}"
+    (input)="setRed(red.value)">
+</div>
+
+<div class="row">
+    <label>G:</label>
+    <input #green type="number" min="0" max="255" placeholder="Green"
+    pattern="{{onlyColorRegEx}}"
+    (input)="setGreen(green.value)">
+</div>
+
+<div class="row">
+    <label>B:</label>
+    <input #blue type="number" min="0" max="255" placeholder="Blue"
+    pattern="{{onlyColorRegEx}}"
+    (input)="setBlue(blue.value)">
+</div>

@@ -1,0 +1,22 @@
+
+:host {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+label {
+    margin-right: 5px;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}

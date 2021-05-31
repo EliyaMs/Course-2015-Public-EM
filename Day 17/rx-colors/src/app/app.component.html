@@ -1,0 +1,20 @@
+<div>
+  <app-input></app-input>
+</div>
+<app-box-color name="My Box" 
+  color="rgb({{GS.getRed()| async}}
+              ,{{GS.getGreen()| async}},
+              {{GS.getBlue()| async}})">
+</app-box-color>
+<app-box-color 
+  name="Computer Box" 
+  color="rgb({{GS.GetComputerColor() | async}})">
+</app-box-color>
+<div class="myButton">
+  <button (click)="setRandomColor()">Random</button>
+</div>
+
+<span 
+  class="success" 
+  *ngIf="isSuccess$ | async"
+>Success!</span>
