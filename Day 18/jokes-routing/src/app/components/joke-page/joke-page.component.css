@@ -1,0 +1,58 @@
+:host {
+    display: flex;
+    padding: 20px;
+    /* border: 1px solid rgb(75, 143, 75); */
+    justify-content: center;
+    align-items: center;
+}
+.all{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    /* align-self: center; */
+    width: fit-content;
+    cursor: pointer;
+    margin: 4px;
+    padding: 4px;
+}
+
+.jokeAndSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    margin: 10px;
+    margin-top: 30px;
+    padding: 2px;
+    border: 1px solid rgb(75, 143, 75);
+    width: fit-content;
+    border-radius: 10px;
+    background-color: aquamarine;
+    color: black;
+}
+
+.joke {
+    display: grid;
+    grid-template-rows: auto 1fr 1fr;
+    border: 1px solid rgb(75, 143, 75);
+}
+
+h1 {
+    grid-column: 1/-1;
+    grid-row: 1;
+    background: rgb(75, 143, 75);
+    color: white;
+    padding: 5px;
+}
+
+label {
+    padding: 5px;
+}
+

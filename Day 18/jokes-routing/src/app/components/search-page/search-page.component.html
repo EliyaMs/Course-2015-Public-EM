@@ -1,0 +1,17 @@
+<div class="search">
+    <input 
+        #keyword type="search"
+        placeholder="Enter some text"
+    >
+    <button (click)="search(keyword.value, selectedCategory.value)"> Search </button>
+</div>
+
+
+<div class="searchByGaner">
+    <label >Search By ganer:</label>
+    <select  #selectedCategory>
+        <option> All </option>
+        <option  *ngFor="let ganer of (ganers$ | async)">{{ganer}}</option>
+    </select>
+
+</div>

@@ -1,0 +1,15 @@
+<div class="all" *ngIf="(joke$ | async) as joke">
+    <button *ngIf="hasPrev$ | async" (click)="gotoPrev()" >Prev</button>
+    <div class="jokeAndSearch" >
+        <div class="joke" >
+            <h1>{{joke.setup}}</h1>
+            <div>
+                <button [hidden]="(expender$ | async)" (click)="show();">Show Punchline</button>
+                <label [hidden]="!(expender$ | async)" class="punchline">punchline: {{joke.punchline}}</label>
+            </div>
+            <label>genre: {{joke.type}}</label>
+        </div>
+        <a routerLink="/search">Go Back to Search page</a>
+    </div>
+    <button *ngIf="hasNext$ | async" (click)="gotoNext()">Next</button>
+</div>
