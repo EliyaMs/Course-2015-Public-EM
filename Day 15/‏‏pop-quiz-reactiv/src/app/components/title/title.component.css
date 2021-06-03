@@ -1,0 +1,21 @@
+:host {
+    margin: 5px;
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    color: darkturquoise;
+    background-color: darkslategrey;
+    animation: color-change 20s infinite;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(185 255 238 / 95%);
+}
+ 
+@keyframes color-change {
+    0% { color: red; }
+    50% { color: rgb(67, 204, 67); }
+    100% { color: rgb(77, 213, 223); }
+}

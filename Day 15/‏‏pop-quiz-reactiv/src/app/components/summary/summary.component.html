@@ -1,0 +1,30 @@
+<div class="summary" >
+    <h2>Summary</h2>
+
+    <div *ngIf="(answeredQuestions$ | async) as questions">
+        <div *ngIf="questions" class="untulNow waiting">
+            <p> correct answers: {{dataService.getCorrectAnswers() | async}} / {{questions.length}}</p>
+        </div>
+        <div *ngIf="!questions.length" class="waiting">
+            <p class="loading">Waiting for your answer</p>
+            <div class="dot-pulse"></div>
+        </div>
+
+        <ul>
+            <li *ngFor="let question of questions">
+                <div class="qA">
+                    <p class="caption">{{question.caption}}</p>
+                    <div class="wrongTrue">
+                        <p 
+                            class="redBorder" 
+                            [class.greenBorder]="question.userAnswer === question.correctAnswer"
+                        >{{question.answers[question.userAnswer]}}
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+</div>

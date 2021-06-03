@@ -1,0 +1,18 @@
+
+<div *ngIf="(question$ | async) as question">
+    
+    <p class="caption">{{question.caption}}</p>
+
+    <div>
+        <ul>
+            <li class="liAnswer"
+                *ngFor="let answer of question.answers; let answerIndex = index"
+
+                (click)="selectAnswer(answerIndex)" 
+            > 
+            {{answer}} 
+            </li>
+        </ul>
+    </div>
+    
+</div>

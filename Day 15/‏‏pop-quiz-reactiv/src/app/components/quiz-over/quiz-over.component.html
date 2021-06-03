@@ -1,0 +1,11 @@
+<div class="quizTitle">
+    <h1>Quiz Over!!</h1>
+    <h2 *ngIf="(dataService.getFinalScore() | async) as score"
+    [class.red]="score <= 50"
+    [class.orange]="score > 50 && score < 70"
+    [class.green]="score >= 70"
+    >Yore Score: {{score}}</h2>
+    <div class="Restart">
+        <button onClick="window.location.reload()">Restart</button>
+    </div>
+</div>
