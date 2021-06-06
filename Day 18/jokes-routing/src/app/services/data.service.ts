@@ -16,7 +16,7 @@ export class DataService {
     let res = this.http
       .get<Joke[]>(url)
       .pipe(
-        tap(b => console.log('b1: ', index, b)),
+        // tap(b => console.log('b1: ', index, b)),
         map(joke => joke[0])
       )
       .toPromise()
@@ -29,7 +29,7 @@ export class DataService {
     let res = this.http
       .get<Joke[]>(url)
       .pipe(
-        tap(b => console.log('b2: ', index, b)),
+        // tap(b => console.log('b2: ', index, b)),
         map(joke => joke[0])
       )
       .toPromise();
