@@ -2,7 +2,7 @@
 JB - Angular, ASP.Net core.
 
 
-Final Project:
+# Final Project:
 
 - Server side ASP.Net core SQL EF
 
@@ -12,7 +12,7 @@ Final Project:
 
 
 
-Course Subjects:
+# Course Subjects:
 
 * SOLID Principles In C#
 
