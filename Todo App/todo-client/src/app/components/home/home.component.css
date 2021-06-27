@@ -1,0 +1,48 @@
+
+  :host {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .top{
+    margin-top: 10px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .content{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .list, .todo, .active{
+    cursor: default;
+    margin: 5%;
+  }
+  
+  .row { /* buttons */
+    display: flex;
+    margin: 20px 5px 0 5px;
+  }
+  
+.buttonCool {
+  margin: 1vw;
+  animation: grow .5s 1 linear;
+}
+@keyframes grow {
+  0%{font-size: 0em;}
+  50%{font-size: 0.5em;}
+  100%{font-size: 1em;}
+}
+
+
+.header {
+  animation: opacity 1s 1 linear;
+}
+@keyframes opacity {
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
+}

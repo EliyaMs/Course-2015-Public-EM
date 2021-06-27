@@ -1,0 +1,65 @@
+
+<div class="all" *ngIf="(list$ | async) as list">
+    <label class="url">Lists > {{list.caption}}</label>
+
+    <ng-container class="actions">
+        <div class="row" *ngIf="!showAskDelete">
+            <span [style.color]="list.color" class="fas icon">{{list.image}}</span>
+            <div >
+                <label class="description">{{list.description}}</label>
+                <div class="row">
+                    <button class="button blue" (click)="newList()">New List</button>
+                    <button class="button blue" (click)="editList(list.id)">Edit List</button>
+                    <button class="button red" (click)="delete(list.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container class="actions">
+        <div class="row" *ngIf="showAskDelete">
+            <span [style.color]="list.color" class="fas ">{{list.image}}</span>
+            <div >
+                <label>Are yoe sure you want to delete the entire list?</label>
+                <div class="row">
+                    <button class="button green" (click)="cancel()">Cancel</button>
+                    
+                    <button class="button red" (click)="deleteList(list.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="(items$ | async) as items">
+        <div class="items" >
+            <app-todo-item-presenter *ngFor="let item of items"
+                [caption]="item.caption"
+                [isCompleted]="item.isCompleted"
+                (completed)="itemComplete(item, $event)"
+                (itemToEdit)="itemToEdit(item, $event)"
+                (itemToDelete)="itemToDelete(item)"
+            >
+            </app-todo-item-presenter>
+        </div>    
+    </ng-container>
+    
+    
+    <ng-container >
+        <div class="row addItem">
+            <input [formControl]="captionControl" placeholder="Add new item" class="addInput">
+            <button 
+                [disabled]="!captionControl.valid || !captionControl.value" 
+                (click)="addItem(list.id)" 
+                class="fas fa-plus-circle addButton"
+                >
+            </button>
+        </div>
+    </ng-container>
+    
+    <div class="error">
+        <app-errors-presenter 
+            [errors]="captionControl.errors"
+        ></app-errors-presenter>
+    </div>
+
+</div>

@@ -1,0 +1,17 @@
+
+<ng-container *ngIf="!(isLoaded$ | async) && !(isSserverDown$ | async)">
+    <div class="err">
+        <div class="Waiting">Waiting For The Server</div>
+        <div class="dot-pulse"></div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="(isSserverDown$ | async)">
+    <div class="serverDown err noselect">
+        <img class="serverDownImage" src="assets/images/serverDowne.png" alt="serverDowne">
+        <div>The Server is Down</div>
+        <div>Please try again later</div>
+        <h6>(ERR_CONNECTION_REFUSED, STATUS 500)</h6>
+        <a (click)='reload()' class="fas fa-redo-alt reload" title="reload"></a>
+    </div>
+</ng-container>

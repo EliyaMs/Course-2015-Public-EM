@@ -1,0 +1,166 @@
+
+:host{
+
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    color: rgb(221, 133, 133);
+    font-size: 45px;
+    margin: 10px;
+    margin-top: 60px;
+    font-family: cursive;
+    animation: notFound 2s infinite linear;
+}
+
+
+@keyframes notFound {
+   50%{color: rgb(182, 80, 80); font-size: 45.1px;}
+}
+
+/* a {
+    text-decoration: none;
+    margin: 10px;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid rgb(75, 143, 75);
+    width: fit-content;
+    border-radius: 10px;
+    background-color: #2cd3e0;
+    color: black;
+} */
+
+/* a:hover {
+    border-radius: 2px;
+    background-color: #5fd9e2;
+} */
+
+img {
+    border: none;
+    width: 40%;
+    height: fit-content;
+    user-select: none;
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    img {
+        width: 60vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    img {
+        width: 300px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/*  ------------------------------- glowing-button ------------------------------- */
+
+.glowing-buttons{
+    margin-top: 50px;
+}
+.glowing-buttons a{
+    padding: 20px 20px;
+    text-decoration: none;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;  
+}
+
+.glowing-buttons a:hover{
+    background: #cff8fa;
+    /* color: rgba(23, 23, 240, 0.966); */
+    box-shadow: 0 0 20px #cff8fa,
+                0 0 5px #cff8fa,
+                0 0 15px #cff8fa,
+                0 0 30px #cff8fa;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.534));
+     
+}
+
+.glowing-buttons a:nth-child(1){
+    /* animation: colorsChange 30s linear infinite; */
+    filter: hue-rotate(0deg);
+}
+
+@keyframes colorsChange{
+    0%{filter: hue-rotate(0deg);}
+    33%{filter: hue-rotate(270deg);}
+    66%{filter: hue-rotate(110deg);}
+}
+
+.glowing-buttons a span{
+    position: absolute;
+    display: block;
+}
+
+.glowing-buttons a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,transparent,#cff8fa);
+    animation: animate1 2s linear infinite;
+}
+@keyframes animate1{
+    0%{left: -100%;}
+    50%,100%{left: 100%;}
+}
+.glowing-buttons a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#cff8fa);
+    animation: animate2 2s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate2{
+    0%{top: -100%;}
+    50%,100%{top: 100%;}
+}
+.glowing-buttons a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(270deg,transparent,#cff8fa);
+    animation: animate3 2s linear infinite;
+    right: -100%;
+    animation-delay: 1s;
+}
+@keyframes animate3{
+    0%{right: -100%}
+    50%,100%{right: 100%;}
+}
+
+
+.glowing-buttons a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#cff8fa);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1.50s;
+}
+@keyframes animate4{
+    0%{bottom: -100%;}
+    50%,100%{ bottom: 100%;}
+}
+
+/* ^^^^^^^^^^^^^^^^^^^^^^^^^glowing-button^^^^^^^^^^^^^^^^^^^^^^^^^*/

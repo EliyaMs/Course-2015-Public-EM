@@ -1,0 +1,82 @@
+
+.item {
+    grid-template-columns: 25px 200px 1fr;
+    align-items: center;
+}
+
+.checkbox{
+    grid-row: 1 ;
+    grid-column: 1/2;
+}
+label {
+    grid-row: 1 ;
+    grid-column: 2/3;
+}
+.inputError{
+    grid-row: 1 ;
+    grid-column: 1/3;
+}
+.icons{
+    display: flex;
+    grid-row: 1 ;
+    grid-column: 3/4;
+}
+
+
+.checkbox {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+label, .caption {
+    margin: 5px;
+    cursor: default;
+}
+
+i {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+.error{
+    display: block;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+input{
+    outline: none;
+}
+input.ng-invalid {
+    border: 2px solid red;
+}
+
+
+
+.delete{
+    color: rgb(238, 144, 144);
+}
+.delete:hover {
+    color: red;
+}
+
+.edit{
+    color: rgb(150, 227, 253);
+}
+.edit:hover {
+    color: deepskyblue;
+}
+
+.save{
+    color: rgb(92 199 96 / 58%);
+}
+.save:hover {
+    color: rgb(39, 167, 39);
+}
+.save:hover {
+    color: rgb(39, 167, 39);
+}
+
+
+

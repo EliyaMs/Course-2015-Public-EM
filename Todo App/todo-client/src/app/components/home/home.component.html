@@ -1,0 +1,30 @@
+
+<ng-container *ngIf="(isLoaded$ | async)">
+  <div class="top">
+    <div class="header">
+      <h1>Todo App</h1>
+      <h2>By {{name}}</h2>
+      <h3 class="date">{{date | date}}</h3>
+    </div>
+
+    <div class="row">
+      <button class="buttonCool" (click)="createNewList()">Create new list</button>
+      <button class="buttonCool" (click)="ViewAllList()">View all list</button>
+      <button class="buttonCool" (click)="ViewAllItems()">View all items</button>
+    </div>
+  </div>
+  
+  <div *ngIf="(all$ | async) as all">
+    <div class="content">
+      <div class="list">
+        <app-length [length]="all[0].length" label='Lists' icon='&#xf0ca;'></app-length>
+      </div>
+      <div class="todo">
+        <app-length [length]="all[1].length" label='Todo Items' icon='&#xf00c;'></app-length>
+      </div>
+      <div class="active">
+        <app-length [length]="all[2].length" label='Active Items' icon='&#xf252;'></app-length>
+      </div>
+    </div>
+  </div>
+</ng-container>

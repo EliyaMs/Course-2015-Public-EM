@@ -1,0 +1,25 @@
+<div *ngIf="{lists: lists$ | async, completed: completedLists$ | async } as all">
+    <ng-container *ngIf="all.lists && all.completed">
+        <p class="header">Lists: 
+            ( {{ all.lists!.length - all.completed!.length }} / {{ all.lists!.length }} comleted )
+        </p>
+        
+        <div class="all">
+            <div 
+                class="list" 
+                *ngFor="let list of all.lists" 
+                [style.border-color]="(all.completed?.includes(list.id)? '': '#97c197')"
+                (click)="goToList(list.id)">
+        
+                <i [style.color]="list.color" class="fas"> {{list.image}}
+                </i>
+                <p> {{list.caption}} </p>
+        
+            </div>
+            <div (click)="addList()" class="fas list">
+                <button class="list" (click)="addList()">Add New List</button>
+        
+            </div>
+        </div>
+    </ng-container>
+</div>

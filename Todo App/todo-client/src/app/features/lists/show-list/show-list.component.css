@@ -1,0 +1,159 @@
+
+.url {
+    font-weight: bold;
+    font-family: aouto;
+    color: rgb(95, 143, 233);
+    margin: 10px;
+}
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+
+span {
+    cursor: default;
+    font-size: 60px;
+    margin: 10px;
+}
+
+label {
+    margin: 5px;
+}
+
+.button{
+    cursor: pointer;
+    width: 65px;
+    padding: 3px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px #95c5ff;
+    font-weight: bold;
+}
+.button:hover{
+    box-shadow: 1px 2px 2px 2px #95c5ff;
+    font-size: 12px;
+}
+
+.red{
+    background-color: red;
+}
+.green{
+    background-color: #5ccc60;
+}
+.blue{
+    background-color: rgb(112 192 255);
+}
+
+.description{
+    font-weight: bold;
+    font-size: 17px;
+    color: #2b5890;
+}
+
+
+.addInput{
+    border-color: skyblue;
+    border-radius: 5px;
+    padding: 1px;
+    outline: none;
+}
+
+
+.addInput.ng-invalid {
+    border: 2px solid red;
+}
+
+
+input:hover,textarea:hover, select:hover{
+    box-shadow: 1px 1px 1px 1px #b4d4fb;
+  }
+
+.addButton {
+    cursor: cell;
+    border: none;
+    color:royalblue;
+    background-color: transparent;
+}
+.addButton:disabled {
+    color:gray;
+}
+.addButton:disabled:hover {
+    cursor: not-allowed;
+}
+.addButton:valid:hover {
+    font-size: 21px;
+    color:rgb(51, 96, 230);
+}
+
+.checkbox {
+    cursor: pointer;
+}
+
+
+.items {
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.addItem{
+    margin-left: 10px;
+}
+
+
+
+.fa-plus-circle {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.icon:hover{
+    animation: runn 1s 1 linear;
+}
+@keyframes runn {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+.error{
+    margin-left: 10px;
+    margin-top: -15px;
+}
+
+
+
+.items, .row {  
+    animation: opacity 1s 1 linear;
+}
+@keyframes opacity {
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+}
+
+.all{
+    animation: run2 .5s 1 linear
+}     
+@keyframes run2 {
+    0%{
+      -webkit-filter: blur(1px);
+      filter: blur(1px);
+      letter-spacing: 1px;
+      margin-left: -20px;
+    }
+    30%{
+      filter: blur(2px);
+    }
+    100% {
+      -webkit-filter: blur(0.1px);
+      filter: blur(0.1px);
+    }
+}

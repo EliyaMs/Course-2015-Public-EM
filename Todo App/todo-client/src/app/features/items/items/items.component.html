@@ -1,0 +1,54 @@
+<ng-container *ngIf="(isLoaded$ | async) && (activeItemsServer$ | async) as all">
+    <ng-container *ngIf="(items$ | async) as items ">
+        <div class="items">
+            <a 
+                class="fas fa-info-circle" 
+                title="You have {{all.length}} active items"
+            > Active items
+            </a>
+            <div *ngIf="all.length" class="searchDiv">
+                <input #txtSearch 
+                    type="search"
+                    class="search" 
+                    placeholder="Search items" 
+                    (input)="onSearchChanged(txtSearch.value)">
+                    
+                <i class="fas fa-search"></i>
+            </div>
+
+            <app-todo-item-presenter 
+                *ngFor="let item of items" [caption]="item.caption"
+                [isCompleted]="item.isCompleted" 
+                (completed)="itemComplete(item, $event)"
+                (itemToEdit)="itemToEdit(item, $event)" 
+                (itemToDelete)="itemToDelete(item)">
+            </app-todo-item-presenter>
+        </div>
+
+        <ng-container *ngIf="!items.length && all.length">
+            <div>
+                <label class="noItems">
+                    Your search did not match any item.
+                </label>
+                <img 
+                    class="img-not-match" 
+                    src="assets\item-search\{{num}}.png" 
+                    alt="search-not-match">
+
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="all.length === 0 && (isLoaded$ | async)">
+            <div>
+                <label class="noItems">
+                    You do not have any uncompleted todo items.
+                </label>
+                <img 
+                    class="no-items"
+                    src="assets\item-search\4.png" 
+                    alt="no-items">
+            </div>
+        </ng-container>
+
+    </ng-container>
+</ng-container>

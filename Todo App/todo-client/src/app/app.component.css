@@ -1,0 +1,14 @@
+:host {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+
+h1 {
+    text-align: center;
+    background-color: #68bbd6;
+}
+
+.main-content {
+    display: block;
+    /* justify-content: center; */
+}

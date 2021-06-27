@@ -1,0 +1,55 @@
+
+<div class="item">
+    <div class="inputError" *ngIf="isEditMode">
+        <input 
+            [formControl]="captionControl"
+            title="Edite caption"
+            placeholder="Edit Item"
+            class="checkbox caption"  
+            [checked]="isCompleted"
+        >
+        <div class="error" *ngIf="!captionControl.valid">
+            <app-errors-presenter 
+                [errors]="captionControl.errors"
+            ></app-errors-presenter>
+        </div>
+    </div>
+
+    <input *ngIf="!isEditMode"
+            title="Mark as completed"
+            class="checkbox"  
+            type="checkbox"      
+            (change)="itemComplete($event)"
+            [checked]="isCompleted"
+        >
+        <label *ngIf="!isEditMode"
+            [title]="isCompleted? 'Completed' : 'Active'"
+            [style.text-decoration]="isCompleted? 'line-through' : 'none'"
+            [style.opacity]="isCompleted? '0.7' : '1'">
+        {{caption}}
+    </label>
+    
+    <div class="icons">
+        <i *ngIf="!isEditMode" 
+        class="fas fa-pencil-alt edit" 
+        (click)="EditMode()" 
+        title="Edit">
+        </i>
+        <i *ngIf="!isEditMode" 
+            class="fas fa-trash-alt delete" 
+            (click)="DeleteIteme()" 
+            title="Delete">
+        </i>
+        <i *ngIf="isEditMode && captionControl.valid" 
+            class="fas fa-save save" 
+            (click)="Save()" 
+            title="Save">
+        </i>
+        <i *ngIf="isEditMode" 
+            class="fas fa-backspace delete" 
+            (click)="Cancel()" 
+            title="Cancel">
+        </i>
+
+    </div>
+</div>
