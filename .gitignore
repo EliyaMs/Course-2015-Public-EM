@@ -395,6 +395,7 @@ FodyWeavers.xsd
 /dist
 /tmp
 /.firebase
+*.firebaserc
 
 # dependencies
 /node_modules
