@@ -9,6 +9,6 @@ then the client side hosting by firebase at -
 https://eliya-todo-app.web.app
 
 So just navigate to the above address in Chrome
-run the server side in VS Studio and you done.
+run the server side in VS Studio and you're done.
 
 
