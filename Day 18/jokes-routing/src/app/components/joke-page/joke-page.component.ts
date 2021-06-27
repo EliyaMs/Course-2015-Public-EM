@@ -28,7 +28,7 @@ export class JokePageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    let combinedParams$!: Observable<[string, number, string]>;
+    let combinedParams$ = new  Observable<[string, number, string]>();
 
     combinedParams$ = this.route.params.pipe(
       map(prms => {
