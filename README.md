@@ -1,5 +1,5 @@
-# Course-2015-Public-EM
-JB - Angular
+# Course-2021-Client-Server
+JB - Angular, ASP.Net core.
 
 
 Final Project:
