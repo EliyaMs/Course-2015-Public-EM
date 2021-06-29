@@ -65,7 +65,8 @@
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
     typing 4s steps(25) ,
-    blink-caret .4s 13 forwards;
+    blink-caret .4s 12 forwards,
+    spacing 2s ease 4s forwards;
 }
 
 .date {
@@ -91,5 +92,11 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes spacing {
+  to {
+    letter-spacing: 0em
   }
 }
