@@ -13,7 +13,7 @@ namespace TodoServer.Controllers
 {
 	[Route("[controller]")]
 	[ApiController]
-	//[EnableCors("AllowSpecific")]
+	[EnableCors("AllowSpecific")]
 	public class ItemsController : ControllerBase
 	{
 		private readonly IItemsRepository _itemRepo;

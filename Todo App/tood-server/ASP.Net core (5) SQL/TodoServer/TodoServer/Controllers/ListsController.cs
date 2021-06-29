@@ -13,7 +13,7 @@ namespace TodoServer.Controllers
 {
 	[Route("[controller]")]
 	[ApiController]
-	//[EnableCors("AllowSpecific")]
+	[EnableCors("AllowSpecific")]
 	public class ListsController : ControllerBase
 	{
 		private readonly IListsRepository _listRepo;
