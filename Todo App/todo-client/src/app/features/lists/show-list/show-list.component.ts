@@ -22,6 +22,7 @@ export class ShowListComponent implements OnInit {
   captionControl!: FormControl;
 
   showAskDelete: boolean = false;
+  isEditMode: boolean = false;
 
   constructor(
     private data: DataService,
@@ -60,6 +61,10 @@ export class ShowListComponent implements OnInit {
 
   }
 
+  EditMode(isEditModeFromEvent: boolean) {
+    this.isEditMode = isEditModeFromEvent;
+  }
+
   newList() {
     this.router.navigate(['lists', -1, 'edit'])
   }
@@ -72,6 +77,9 @@ export class ShowListComponent implements OnInit {
     this.showAskDelete = true;
   }
   async deleteList(id: number) {
+    // to bypass the UnsavedItemsGuard - canDeactivate
+    this.isEditMode = false 
+    
     await this.data.deleteList(id)
     this.router.navigate(['home'])
   }

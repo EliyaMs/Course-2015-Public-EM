@@ -1,14 +1,14 @@
 
 <div class="item">
     <div class="inputError" *ngIf="isEditMode">
-        <input 
+        <input
             [formControl]="captionControl"
             title="Edite caption"
             placeholder="Edit Item"
             class="checkbox caption"  
             [checked]="isCompleted"
         >
-        <div class="error" *ngIf="!captionControl.valid">
+        <div class="error" *ngIf="captionControl.invalid">
             <app-errors-presenter 
                 [errors]="captionControl.errors"
             ></app-errors-presenter>
@@ -45,11 +45,12 @@
             (click)="Save()" 
             title="Save">
         </i>
+
         <i *ngIf="isEditMode" 
-            class="fas fa-backspace delete" 
+            class="fas fa-times-circle delete" 
             (click)="Cancel()" 
             title="Cancel">
-        </i>
+        </i><!-- fa-backspace  fa-times  fa-times-circle-->
 
     </div>
 </div>

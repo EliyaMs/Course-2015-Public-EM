@@ -6,9 +6,10 @@ import { ListsComponent } from './lists/lists.component';
 import { ShowListComponent } from './show-list/show-list.component';
 import { NoListsGuard } from 'src/app/core/gards/no-lists.guard';
 import { NotFoundComponent } from 'src/app/shared/components/not-found/not-found.component';
-import { UnsavedChangesGuard } from 'src/app/core/gards/unsaved-changes.guard';
+import { UnsavedChangesGuard } from 'src/app/core/gards/unsaved-changes-list.guard';
 import { ListsResolver } from './services/lists.resolver';
 import { ItemsResolver } from '../items/services/items.resolver';
+import { UnsavedItemsGuard } from 'src/app/core/gards/unsaved-Items.guard';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
     },
     {
         path: ':id', component: ShowListComponent,
-        resolve: [ListsResolver, ItemsResolver]
+        resolve: [ListsResolver, ItemsResolver],
+        canDeactivate: [UnsavedItemsGuard],
     },
     {
         path: ':id/edit',

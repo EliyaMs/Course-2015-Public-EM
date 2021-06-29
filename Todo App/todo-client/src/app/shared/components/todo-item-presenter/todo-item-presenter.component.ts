@@ -20,6 +20,8 @@ export class TodoItemPresenterComponent implements OnInit {
   @Output() itemToEdit = new EventEmitter<string>()
 
   @Output() itemToDelete = new EventEmitter<void>()
+  
+  @Output() isEditModeEvent = new EventEmitter<boolean>()
 
   captionControl!: FormControl;
   isEditMode: boolean = false;
@@ -45,6 +47,7 @@ export class TodoItemPresenterComponent implements OnInit {
   
   EditMode() {
     this.isEditMode = !this.isEditMode;
+    this.isEditModeEvent.emit(this.isEditMode)
   }
 
   Cancel() {
@@ -53,8 +56,10 @@ export class TodoItemPresenterComponent implements OnInit {
   }
 
   Save() {
-    if (this.captionControl.valid){
-      this.itemToEdit.emit(this.captionControl.value)
+    if (this.captionControl.valid) {
+      if(this.caption !== this.captionControl.value) { // emit only if was change
+        this.itemToEdit.emit(this.captionControl.value)
+      }
       this.Cancel();
     }
   }

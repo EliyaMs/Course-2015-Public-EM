@@ -1,9 +1,10 @@
 
+
 <ng-container *ngIf="(isLoaded$ | async)">
   <div class="top">
     <div class="header">
       <h1>Todo App</h1>
-      <h2>By {{name}}</h2>
+      <div class="typewriter name"><h2>By {{name}}</h2></div>
       <h3 class="date">{{date | date}}</h3>
     </div>
 

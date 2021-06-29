@@ -23,14 +23,13 @@ label {
 }
 
 
-.checkbox {
+input[type="checkbox"] {
     margin-left: 10px;
     cursor: pointer;
 }
 
 label, .caption {
     margin: 5px;
-    cursor: default;
 }
 
 i {

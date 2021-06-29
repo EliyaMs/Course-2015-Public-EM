@@ -38,6 +38,7 @@
                 (completed)="itemComplete(item, $event)"
                 (itemToEdit)="itemToEdit(item, $event)"
                 (itemToDelete)="itemToDelete(item)"
+                (isEditModeEvent)="EditMode($event)"
             >
             </app-todo-item-presenter>
         </div>    
@@ -48,7 +49,7 @@
         <div class="row addItem">
             <input [formControl]="captionControl" placeholder="Add new item" class="addInput">
             <button 
-                [disabled]="!captionControl.valid || !captionControl.value" 
+                [disabled]="captionControl.invalid || !captionControl.value" 
                 (click)="addItem(list.id)" 
                 class="fas fa-plus-circle addButton"
                 >

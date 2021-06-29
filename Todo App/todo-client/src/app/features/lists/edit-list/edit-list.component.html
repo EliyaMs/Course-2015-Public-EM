@@ -15,7 +15,7 @@
             <div>Caption</div>
             <div *ngIf="get('caption') as field">
              <input formControlName="caption" >
-             <app-errors-presenter *ngIf="field.touched"
+             <app-errors-presenter *ngIf="field.touched || field.value"
              [errors]="field.errors" 
             ></app-errors-presenter>
             </div>
