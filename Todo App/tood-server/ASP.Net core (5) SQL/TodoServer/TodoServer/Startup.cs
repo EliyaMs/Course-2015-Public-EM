@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Collections.Generic;
 using TodoServer.Data;
 using TodoServer.Services;
 
@@ -24,10 +25,19 @@ namespace TodoServer
 		public void ConfigureServices(IServiceCollection services)
 		{
 
-			services.AddCors(options => options.AddDefaultPolicy(
-								builder => builder.AllowAnyOrigin()
-													.AllowAnyMethod()
-													.AllowAnyHeader()));
+			services.AddCors(options =>
+			{
+				// "Cors" section from appsettings.json 
+				var Cors = _configuration.GetSection("Cors").Get<Dictionary<string, string[]>>(); // or <List<string[]>>
+
+				options.AddPolicy(name: "AllowSpecific",
+				  builder => {
+					  builder.WithOrigins(Cors["Origins"]) // builder.WithOrigins("https://localhost:4200", "https://eliya-todo-app.web.app")
+					  .WithHeaders(Cors["Headers"]) // .WithHeaders("content-type") or AllowAnyHeader()
+					  .WithMethods(Cors["Methods"]); // .WithMethods("PUT", "DELETE", "GET", "POST") or .AllowAnyMethod()
+				  });
+
+			});
 
 			services.AddDbContext<TodoDbContext>(options =>
 			{
